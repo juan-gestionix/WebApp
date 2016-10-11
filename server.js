@@ -48,24 +48,24 @@ app.use(function (err, req, res, next) {
 });
 router.route('/ask')
     .put(function (req, res) {
-        var _guid = Guid.EMPTY; 
+        var _guid = Guid.EMPTY;
         listUsers.forEach(function (value, index) {
-           //if (value.companyId == req.body.companyId) {
+            if (value.companyId == req.body.companyId) {
                 var _guid = Guid.create();
                 listAsks.push({ key: _guid, res: res });
                 value.socket.emit('ask', { key: _guid, companyId: req.body.companyId, ask: req.body.ask, options: req.body.data, typecontrol: req.body.typecontrol, title: req.body.title });
                 return;
-            //}
+            }
         });
     });
 router.route('/progressMigration')
     .put(function (req, res) {
         listUsers.forEach(function (value, index) {
             //console.log(req.query);
-            //if (value.companyId == req.body.companyId) {
+            if (value.companyId == req.body.companyId) {
                 value.socket.emit('progressMigration', { progress: req.body });
                 return;
-            //}
+            }
         });
         res.json({ status: 200, detail: 'Ok' });
     });
@@ -102,7 +102,7 @@ io.on('connection', function (socket) {
         var _index = -1;
         listAsks.forEach(function (value, index) {
             if (value.key == data.key) {
-                value.res.json({ status: data.status, detail: data.detail, companyId: data.companyId, ask: data.ask, answer: data.answer, response_repeat : data.response_repeat });
+                value.res.json({ status: data.status, detail: data.detail, companyId: data.companyId, ask: data.ask, answer: data.answer, response_repeat: data.response_repeat });
                 _index = index;
                 return;
             }
