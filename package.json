@@ -1,0 +1,27 @@
+{
+  "name": "coi-web-app",
+  "version": "0.0.0",
+  "description": "CoiWebApp",
+  "main": "server.js",
+  "author": {
+    "name": "rosen"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juan-gestionix/WebApp.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "guid": "0.0.12",
+    "morgan": "^1.7.0",
+    "node-rest-client": "^2.0.1",
+    "socket.io": "^1.4.8"
+  }
+}
