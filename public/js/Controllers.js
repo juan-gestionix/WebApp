@@ -493,7 +493,7 @@ var $coi = {
 
 }
 //=============================================================================================================
-socket = io.connect('http://pushgestionix.azurewebsites.net', { transports: ['websocket', 'polling', 'flashsocket'] });
+socket = io.connect('http://' + location.host, { transports: ['websocket', 'polling', 'flashsocket'] });
 socket.on('connected', function (data) { //user connected
     if ($coi.html.data.companyId == null) return;
     console.log($coi.html.data.companyId);
