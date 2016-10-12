@@ -12,7 +12,7 @@ var $coi = {
         data: {
             xhrUpload: null,
             xhrMigration: null,
-            companyId: $.urlParam('companyId') == null ? null : $.rc4DecryptStr($.urlParam('companyId'), 'company'),
+            companyId: "5d475256-9043-49f1-896f-750d99253b13",//$.urlParam('companyId') == null ? null : $.rc4DecryptStr($.urlParam('companyId'), 'company'),
             userId: $.urlParam('userId') == null ? null : $.rc4DecryptStr($.urlParam('userId'), 'user'),
             systemMigration: 1,
             responsePending: false,
@@ -110,8 +110,7 @@ var $coi = {
         html.get();
         coi.events();
         html.data.init.rfc.focus();
-        html.data.init.rfc.val('XAXX010101000'); //$.rc4DecryptStr($.urlParam('rfc'), 'rfc')
-        html.data.init.businessName.val($.rc4DecryptStr($.urlParam('businessName'), 'businessName'));
+        html.data.init.rfc.val('XAXX010101000');
         if (!$coi.validRFC()) $coi.html.data.init.rfc.val('').focus();
         else $coi.html.data.init.businessName.val('').focus();
     },
