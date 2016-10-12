@@ -110,7 +110,7 @@ var $coi = {
         html.get();
         coi.events();
         html.data.init.rfc.focus();
-        html.data.init.rfc.val($.rc4DecryptStr($.urlParam('rfc'), 'rfc'));
+        html.data.init.rfc.val('XAXX010101000'); //$.rc4DecryptStr($.urlParam('rfc'), 'rfc')
         html.data.init.businessName.val($.rc4DecryptStr($.urlParam('businessName'), 'businessName'));
         if (!$coi.validRFC()) $coi.html.data.init.rfc.val('').focus();
         else $coi.html.data.init.businessName.val('').focus();
